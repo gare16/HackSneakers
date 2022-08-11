@@ -119,7 +119,7 @@ class EditProfileActivity : AppCompatActivity() {
 
 
     private fun setAttachPicture() {
-        val popupMenu = PopupMenu(this, img_item)
+        val popupMenu = PopupMenu(this, img_update_profile)
         popupMenu.menu.add(Menu.NONE, 0, 0, "Camera")
         popupMenu.menu.add(Menu.NONE, 1, 1, "Gallery")
         popupMenu.show()
