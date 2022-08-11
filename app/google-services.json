@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1024857751255",
+    "project_id": "hacksneakers-barcode",
+    "storage_bucket": "hacksneakers-barcode.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024857751255:android:5b046f3d0be5459b843a92",
+        "android_client_info": {
+          "package_name": "com.apps.hacksneakers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024857751255-987tc9vihb11605ta6r490up3os2u89s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjJKbuKYLgirnj5xYEd-rkwgnhOsf-SIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024857751255-987tc9vihb11605ta6r490up3os2u89s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

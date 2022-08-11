@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/drawable-v24/bg_img_profile_rounded_black.xml" value="0.149" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/drawable/bg_img_profile_rounded_white.xml" value="0.149" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/drawable/bg_profile.xml" value="0.149" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/drawable/ic_camera.xml" value="0.149" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/drawable/ic_edit.xml" value="0.149" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/drawable/img_rounded.xml" value="0.149" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_add_shoes.xml" value="0.209375" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_edit_profile.xml" value="0.209375" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_edit_shoe.xml" value="0.209375" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_forgot_password.xml" value="0.209375" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_login.xml" value="0.209375" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_new.xml" value="0.209375" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_result_scan.xml" value="0.209375" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_scan.xml" value="0.209375" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/activity_sign_up.xml" value="0.209375" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/item_list.xml" value="0.209375" />
+        <entry key="..\:/Latihan/AndroidStudio/HackSneakers/app/src/main/res/layout/result_scanner.xml" value="0.209375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

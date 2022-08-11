@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.LoginActivity">
+
+    <FrameLayout
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/color3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo_apps"
+            android:layout_gravity="center"/>
+
+        <View
+            android:background="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/sign_in"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/source_sans_pro_bold"
+        app:layout_constraintStart_toStartOf="@id/heading"
+        app:layout_constraintEnd_toEndOf="@id/heading"
+        app:layout_constraintTop_toBottomOf="@id/heading"/>
+
+    <!--Email-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        app:helperTextTextColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="25dp">
+
+        <EditText
+            android:id="@+id/email_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/source_sans_pro_regular"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Password-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:endIconMode="password_toggle"
+        android:hint="@string/password"
+        app:helperTextTextColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/textField1"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="25dp">
+
+        <EditText
+            android:id="@+id/password_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:fontFamily="@font/source_sans_pro_regular"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Android is a Software stack"
+        android:textSize="16sp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Forgot your password ?"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:fontFamily="@font/source_sans_pro_regular"
+        app:layout_constraintTop_toBottomOf="@id/textField2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/sign_in"
+        android:fontFamily="@font/source_sans_pro_regular"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textField2"
+        style="@style/Widget.Material3.Button.TonalButton"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
