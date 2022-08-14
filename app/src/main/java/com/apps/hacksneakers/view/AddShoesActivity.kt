@@ -188,6 +188,7 @@ class AddShoesActivity : AppCompatActivity() {
         ActivityResultCallback<ActivityResult>{ result ->
             if (result.resultCode == Activity.RESULT_OK){
                 val data = result.data
+                imgUrl = data!!.data
 
                 img_item.setImageURI(imgUrl)
             }else{
@@ -203,6 +204,7 @@ class AddShoesActivity : AppCompatActivity() {
             if (result.resultCode == Activity.RESULT_OK){
                 val data = result.data
                 imgUrl = data!!.data
+
                 img_item.setImageURI(imgUrl)
             }else{
                 Toast.makeText(this,

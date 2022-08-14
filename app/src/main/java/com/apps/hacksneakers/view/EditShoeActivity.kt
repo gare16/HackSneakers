@@ -110,18 +110,22 @@ class EditShoeActivity : AppCompatActivity() {
     private fun updateItem(uploadedImageUrl: String) {
         progressDialog.setMessage("Sedang Mengubah Barang ...")
 
+        val timestamp = System.currentTimeMillis()
         val hashMap: HashMap<String, Any> = HashMap()
+
+        hashMap["id"] = "$timestamp"
         hashMap["name"] = "${name}"
         hashMap["type"] = "${type}"
         hashMap["price"] = "${price}"
         hashMap["info"] = "${info}"
+        hashMap["uid"] = "${firebaseAuth.uid}"
 
         if (imgUrl !== null){
             hashMap["img"] = uploadedImageUrl
         }
 
         val reference = FirebaseDatabase.getInstance().getReference("Shoe")
-        reference.child(firebaseAuth.uid!!)
+        reference.child("$timestamp")
             .updateChildren(hashMap)
             .addOnSuccessListener {
                 progressDialog.dismiss()
@@ -140,7 +144,7 @@ class EditShoeActivity : AppCompatActivity() {
             }
     }
     private fun onAttachImage() {
-        val popupMenu = PopupMenu(this, img_item)
+        val popupMenu = PopupMenu(this, img_update_shoe)
         popupMenu.menu.add(Menu.NONE, 0, 0, "Camera")
         popupMenu.menu.add(Menu.NONE, 1, 1, "Gallery")
         popupMenu.show()

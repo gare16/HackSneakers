@@ -10,9 +10,11 @@ import com.apps.hacksneakers.R
 import com.apps.hacksneakers.adapter.ShoesAdapter
 import com.apps.hacksneakers.model.ShoeModel
 import com.bumptech.glide.Glide
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
     lateinit var mDataBase: DatabaseReference
@@ -23,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        mDataBase = FirebaseDatabase.getInstance().getReference("Shoe")
         firebaseAuth = FirebaseAuth.getInstance()
         shoeList = arrayListOf<ShoeModel>()
         /**initialized*/
@@ -110,7 +114,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getShoesData() {
-        mDataBase = FirebaseDatabase.getInstance().getReference("Shoe")
         mDataBase.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){
@@ -129,5 +132,25 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (mDataBase != null){
+            getShoesData()
+        }
+    }
+
+    override fun onBackPressed() {
+        MaterialAlertDialogBuilder(this, R.style.ThemeOverlay_App_MaterialAlertDialog)
+            .setTitle("Close App")
+            .setMessage("Do you want to close this app ?")
+            .setNegativeButton("Cancel"){a, s ->
+
+            }
+            .setPositiveButton("Yes!"){a, s ->
+                this.finishAffinity()
+            }
+            .show()
     }
 }

@@ -43,6 +43,7 @@ class ShoesAdapter(
         val newList = shoeList[position]
         holder.v.isShoes = shoeList[position]
         holder.v.root.setOnClickListener {
+            val shoeId = newList.id
             val img = newList.img
             val name = newList.name
             val info = newList.info
@@ -52,6 +53,7 @@ class ShoesAdapter(
 
             /**set Data*/
             val mIntent = Intent(c, NewActivity::class.java)
+            mIntent.putExtra("shoeId",shoeId)
             mIntent.putExtra("img",img)
             mIntent.putExtra("name",name)
             mIntent.putExtra("info",info)

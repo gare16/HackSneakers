@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.apps.hacksneakers.R
 import com.apps.hacksneakers.uitel.getProgessDrawable
 import com.apps.hacksneakers.uitel.loadImage
 import com.bumptech.glide.Glide
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -18,15 +20,20 @@ import kotlinx.android.synthetic.main.activity_profile.*
 
 class NewActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
+    var shoeId = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new)
+        shoeId = intent.getStringExtra("shoeId")!!
 
         firebaseAuth = FirebaseAuth.getInstance()
         checkMember()
         btn_update_shoe.setOnClickListener {
             startActivity(Intent(this, EditShoeActivity::class.java))
             finish()
+        }
+        btn_delete_shoe.setOnClickListener {
+            checkDetailData()
         }
 
 
@@ -44,6 +51,33 @@ class NewActivity : AppCompatActivity() {
         info.text = "Stock barang : $shoeInfo"
         price.text = "Rp : $shoePrice"
         img.loadImage(shoeImg, getProgessDrawable(this))
+    }
+
+    private fun checkDetailData() {
+        MaterialAlertDialogBuilder(this, R.style.ThemeOverlay_App_MaterialAlertDialog)
+            .setTitle("Deleting Data")
+            .setMessage("Are you sure want to delete this data ?")
+            .setPositiveButton("Yes"){a, s->
+                deleteCurrentData()
+            }
+            .setNegativeButton("Cancel"){a, s->
+            }
+            .show()
+    }
+
+    private fun deleteCurrentData() {
+        val ref = FirebaseDatabase.getInstance().getReference("Shoe")
+        ref.child(shoeId)
+            .removeValue()
+            .addOnSuccessListener {
+                Toast.makeText(this, "Data has been deleted.", Toast.LENGTH_SHORT).show()
+
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
+            .addOnFailureListener{
+                Toast.makeText(this, "Something went wrong, ${it.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun checkMember() {
